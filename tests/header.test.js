@@ -1,16 +1,29 @@
-const puppeteer = require('puppeteer');
+const Page = require('./helpers/page');
 
-test('Adds two number', () => {
-    const sum = 1 + 2;
+let page;
 
-    expect(sum).toEqual(3);
+beforeEach(async () => {
+    page = await Page.build();
+    await page.goto('localhost:3000');
+});
+
+afterEach(async () => {
+    await page.close();
 });
 
 test('We can launch a browser', async () => {
-    const browser = await puppeteer.launch({
-        headless: false
-    });
-    const page = await browser.newPage();
+    const text = await page.getContentsOf('a.brand-logo');
+    expect(text).toEqual("Blogster");
+});
 
-    
+test('clicking login starts the OAuth flow', async () => {
+    await page.click('.right a');
+    const url = await page.url();
+    expect(url).toMatch(/accounts\.google\.com/);
+});
+
+test('when signed in, show logout button', async () => {
+    await page.login();
+    const text = await page.getContentsOf('a[href="/auth/logout"]');
+    expect(text).toEqual('Logout');
 });

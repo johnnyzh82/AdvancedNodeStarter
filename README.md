@@ -43,3 +43,6 @@ const allGreeting = new Proxy(moreGreeting, {
     }
 })
 ```
+
+### 129 Client Builds
+`npm install -prefix client` can help install sub-module independently in child directory

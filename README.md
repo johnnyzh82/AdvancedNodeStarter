@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.com/johnnyzh82/AdvancedNodeStarter.svg?branch=master)](https://travis-ci.com/johnnyzh82/AdvancedNodeStarter)
 
+Some course notes after taking Udemy Node JS: Advanced Concept course
+
+# OAuth flow
+![OAuthFlow.PNG](./images/OAuthFlow.PNG)
+
 # Test
 puppeteer   (Starts up chromium)
 -> Browser  (Represents an open browser window)
@@ -45,3 +50,9 @@ const allGreeting = new Proxy(moreGreeting, {
 
 ### 129 Client Builds
 `npm install -prefix client` can help install sub-module independently in child directory
+
+### 145 Upload Flow with AWS S3
+1. Client mostly talks to AWS S3 directly to reduce server bandwidth and computation
+2. Server only process the url and store url to mongo db
+
+![ImageUploadFlow.PNG](./images/ImageUploadFlow.PNG)

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/johnnyzh82/AdvancedNodeStarter.svg?branch=master)](https://travis-ci.com/johnnyzh82/AdvancedNodeStarter)
+
 # Test
 puppeteer   (Starts up chromium)
 -> Browser  (Represents an open browser window)

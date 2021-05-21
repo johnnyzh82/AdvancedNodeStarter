@@ -56,3 +56,6 @@ const allGreeting = new Proxy(moreGreeting, {
 2. Server only process the url and store url to mongo db
 
 ![ImageUploadFlow.PNG](./images/ImageUploadFlow.PNG)
+ 
+### 146 Details of the presigned URL
+![ImageUploadFlow.PNG](./images/PresignedURL.PNG)
